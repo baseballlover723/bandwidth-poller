@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mbs_downloaded: 9.99
+  mbs_uploaded: 9.99
+  real_mbs_downloaded: 9.99
+  real_mbs_uploaded: 9.99
+  restriction: MyString
+
+two:
+  mbs_downloaded: 9.99
+  mbs_uploaded: 9.99
+  real_mbs_downloaded: 9.99
+  real_mbs_uploaded: 9.99
+  restriction: MyString
