@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BandwidthPoller</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>Bandwidth Poller</title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "vendor/custom.modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav id="nav" class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Home", home_path %></h1>
+    </li>
+  </ul>
 
-<%= yield %>
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#">Philip Ross</a>
+        <ul class="dropdown">
+          <li><a href="https://www.linkedin.com/pub/philip-ross/a5/569/575">Philip's LinkedIn</a></li>
+          <li><a href="https://github.com/baseballlover723">Philip's GitHub</a></li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+</nav>
 
+<div class="row">
+  <%= yield %>
+  <div class="push"></div>
+</div>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 </body>
 </html>

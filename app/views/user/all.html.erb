@@ -1,0 +1,25 @@
+<h3>Add a New User</h3>
+
+<%= simple_form_for @user, wrapper: :horizontal_form do |f| %>
+    <%= f.input :name, label: "Enter your name" %>
+    <%= f.input :username, label: "Enter your username" %>
+    <%= f.input :password, label: "Enter your password" %>
+    <%= f.button :submit, "Add User", class: "btn btn-primary large-offset-3" %>
+<% end %>
+
+<h3>I'm monitoring these peoples bandwidths</h3>
+<div class="center-text">
+  <%= link_to "Delete Everyone", users_path, data: {confirm: "Are you sure? Everyones data will be lost"},
+              method: :delete, class: "button alert" %>
+</div>
+
+<ul>
+  <% @users.each do |user| %>
+      <li>
+        <%= link_to "Delete", destroy_user_path(user), data: {confirm: "Are you sure? Your data will be lost"},
+                    method: :delete, class: "button tiny alert" %>
+        <%= "#{user.name} (#{user.username}) | #{user.encrypted_password}" %>
+      </li>
+  <% end %>
+</ul>
+

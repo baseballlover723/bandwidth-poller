@@ -1,6 +1,15 @@
 Rails.application.routes.draw do
+
+
   root to: 'main#index', as: :home
 
+  get '/add', to: 'user#new', as: :new_user
+  get 'users', to: 'user#all', as: :users
+
+  post 'users', to: 'user#create'
+
+  delete 'users', to: 'user#destroy_all'
+  delete 'users/:id', to: 'user#destroy', as: :destroy_user
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
