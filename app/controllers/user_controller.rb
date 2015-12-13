@@ -13,10 +13,10 @@ class UserController < ApplicationController
     User.create(
         name: params["user"]["name"],
         username: params["user"]["username"],
-        encrypted_password: encrypt(params["user"]["password"])
+        encrypted_password: encrypt(params["user"]["password"]),
+        active: true
     )
-    all
-    render action: "all"
+    redirect_to action: 'all'
   end
 
   def destroy
@@ -28,4 +28,12 @@ class UserController < ApplicationController
     User.delete_all
     redirect_to action: "all"
   end
+
+  def toggle_active
+    puts "toggle id: #{params[:id]}"
+    user = User.find(params[:id])
+    user.toggle! :active
+    render json: user.active, status: :ok
+  end
+
 end

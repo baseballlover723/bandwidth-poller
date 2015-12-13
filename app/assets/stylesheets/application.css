@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+
  */
 
 * {
@@ -46,4 +48,9 @@ h1, h2, h3 {
 
 .center-text {
     text-align: center;
+}
+
+.user-control-buttons a {
+    margin-left: 10px;
+    margin-right: 10px;
 }

@@ -6,6 +6,7 @@ class CreateDataPoints < ActiveRecord::Migration
       t.decimal :real_mbs_downloaded
       t.decimal :real_mbs_uploaded
       t.string :restriction
+      t.boolean :active
       t.belongs_to :user, index: true
 
       t.timestamps null: false

@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20151211194445) do
     t.decimal  "real_mbs_downloaded",             precision: 10
     t.decimal  "real_mbs_uploaded",               precision: 10
     t.string   "restriction",         limit: 255
+    t.boolean  "active"
     t.integer  "user_id",             limit: 4
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151211194445) do
     t.string   "username",           limit: 255
     t.string   "encrypted_password", limit: 255
     t.string   "name",               limit: 255
+    t.boolean  "active"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end

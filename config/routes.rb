@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-
-
-  root to: 'main#index', as: :home
+  root to: 'user#all', as: :home
 
   get '/add', to: 'user#new', as: :new_user
-  get 'users', to: 'user#all', as: :users
 
   post 'users', to: 'user#create'
+
+  put '/:id', to: 'user#toggle_active', as: :toggle_user
 
   delete 'users', to: 'user#destroy_all'
   delete 'users/:id', to: 'user#destroy', as: :destroy_user
